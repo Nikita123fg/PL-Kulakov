@@ -1,4 +1,4 @@
-def fci_sum(n):
+n = int(input("Введите кол-во чисед из ряда Фибоначчи: "))
     a = 0
     b = 1
     total = 0
@@ -10,8 +10,6 @@ def fci_sum(n):
         b = c
         
     return total
-
-n = int(input("Введите кол-во чисед из ряда Фибоначчи: "))
 
 result = fci_sum(n)
 print(f"Сумма чисел {n} из ряда Фибоначчи равна {result}")
