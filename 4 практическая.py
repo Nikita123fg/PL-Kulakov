@@ -1,16 +1,7 @@
-def fci_sum(n)
-    a = 0
-    b = 1
-    total = 0
-    
-    for _ in range(n):
-        total += a + b
-        c = a + b
-        a = b
-        b = c
-
-n = int(input("Введите кол-во чисед из ряда Фибоначчи: "))
-    return total
-
-result = fci_sum(n)
-print(f"Сумма чисел {n} из ряда Фибоначчи равна {result}")
+n=int(input("Введите количество чисел из ряда Фибоначи:"))
+a,b=0,1
+s_fib=0
+for _ in range(n):
+    s_fib+=a
+    a,b=b,a+b
+print("Сумма первых",n, "чисел Фибоначи", s_fib)
