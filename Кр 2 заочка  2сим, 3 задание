@@ -1,0 +1,19 @@
+text = input("Введите текст: ")
+
+result = ""
+word = ""
+for char in text:
+    if char.isalpha():
+        word += char
+    else:
+        if word:
+            transformed = word[1:] + word[0] + "ауч"
+            result += transformed
+            word = ""
+        result += char
+
+if word:
+    transformed = word[1:] + word[0] + "ауч"
+    result += transformed
+
+print(result)
