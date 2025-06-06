@@ -1,0 +1,36 @@
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class RingsArray {
+    public static void main(String[] args) {
+        int m = 5; // высота
+        int n = 7; // ширина
+
+        int[][] arr = new int[m][n];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int layer = Math.min(Math.min(i, m - 1 - i), Math.min(j, n - 1 - j));
+                arr[i][j] = layer + 1;
+            }
+        }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        try (FileWriter writer = new FileWriter("result.txt")) {
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    writer.write(arr[i][j] + " ");
+                }
+                writer.write("\n");
+            }
+        } catch (IOException e) {
+            System.out.println("Ошибка записи файла: " + e.getMessage());
+        }
+    }
+}
